@@ -1,0 +1,65 @@
+Problem Statement:
+
+goal is to create a classifier that can accurately classify unseen property
+addresses into one of the predefined categories.
+
+Approch:
+
+This project was about building a basic text classifier to categorize property addresses into 5 classes. I tried to keep the pipeline simple and easy to reproduce.
+
+1- Understanding the data
+
+The dataset had around 8k rows with two columns, the address text and the category.
+There were no missing values, but there were some duplicates which I removed.
+The category labels looked clean and already consistent, so no extra mapping was needed.
+
+2- Preprocessing
+
+I cleaned the address text by removing extra spaces, newline characters, and making the formatting consistent. 
+
+3- Train/validation split
+
+I split the data into 80% training and 20% validation using stratified sampling so the class proportions stayed the same in both splits.
+
+4- Converting text to features
+
+For feature extraction, I used TF-IDF with unigrams and bigrams.
+TF-IDF works well for short text fields like property addresses, and it’s fast to train with traditional ML models
+
+5- Baseline models
+
+I tried three basic models,Logistic Regression,Random Forest,SVM
+
+Logistic Regression gave the best balance of speed and performance, so I used it as the main model for evaluation.
+I did not do hyperparameter tuning,but can be done for more better Performance of the Model.
+
+
+6- Evaluiation
+I evaluated the model using,accuracymacro F1,classification report,confusion matrix
+
+I also checked misclassified examples to understand the common errors (for example, “houseorplot” and “landparcel” sometimes get mixed).
+
+7- Saving the model
+
+I saved the logistic regression model along with the TF-IDF vectorizer and label encoder so the pipeline can be reused for testing new data.
+
+8- Final Note 
+Notes
+
+The model is a basic traditional ML pipeline. It can be improved with:
+
+1 hyperparameter tuning
+
+2 More text cleaning
+
+3 using word embeddings or a small transformer model
+
+4 Neural network improvements:
+
+Use word embeddings (Word2Vec, FastText, GloVe) instead of TF-IDF
+
+Train a simple feed-forward network or LSTM on embedded text
+
+Try small transformer models (DistilBERT, MiniLM)
+
+But the current setup is simple, reproducible, and follows the assignment requirements
