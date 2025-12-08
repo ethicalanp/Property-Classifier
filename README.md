@@ -41,3 +41,5 @@ LSTM/GRU model
 Test transformer-based models like DistilBERT or MiniLM for better contextual understanding
 
 Fine-tune a small language model specifically on property address text
+
+Also going to Src folder which contains python modules  for reusability
