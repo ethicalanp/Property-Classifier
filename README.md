@@ -42,4 +42,4 @@ Test transformer-based models like DistilBERT or MiniLM for better contextual un
 
 Fine-tune a small language model specifically on property address text
 
-Also going to Src folder which contains python modules  for reusability
+Also going add  Src folder which contains python modules  for reusability
